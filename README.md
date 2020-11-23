@@ -1,4 +1,7 @@
 ## Drop
+Simple app for dropping files from phone to computer, both devices have to be on the same network.
+Drop runs flask server and generates QR code with server URL for easy scan on phone.
+
 
 Install dependencies (Fedora):
 ```
