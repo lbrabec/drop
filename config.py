@@ -1,6 +1,6 @@
 class Config():
     UPLOAD_FOLDER = '~/Drop'
-    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'heic', 'heif', 'mov'}
+    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'heic', 'heif', 'mov', 'mpg', 'mp4', 'mkv', 'avi', 'mid', 'wav', 'aiff', 'mp3'}
     PORT = 6969
 
     def set_drop_dir(self, drop_dir):
