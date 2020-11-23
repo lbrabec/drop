@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128.0px"
+   height="128.0px"
+   viewBox="0 0 128.0 128.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="drop.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <defs
+     id="defs1981">
+    <rect
+       x="15"
+       y="15"
+       width="95"
+       height="105"
+       id="rect2575" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2564">
+      <stop
+         style="stop-color:#3ca5b3;stop-opacity:1"
+         offset="0"
+         id="stop2568" />
+      <stop
+         style="stop-color:#6074c8;stop-opacity:1"
+         offset="1"
+         id="stop2570" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2564"
+       id="linearGradient2566"
+       x1="70"
+       y1="120"
+       x2="70"
+       y2="10"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter2793">
+      <feFlood
+         flood-opacity="0.803922"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood2783" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2785" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1.5"
+         result="blur"
+         id="feGaussianBlur2787" />
+      <feOffset
+         dx="0"
+         dy="1"
+         result="offset"
+         id="feOffset2789" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2791" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="-22.078742"
+     inkscape:cy="72.477829"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:window-width="1867"
+     inkscape:window-height="1136"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2551" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1984">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:url(#linearGradient2566);fill-opacity:1;stroke:#ffffff;stroke-width:5.64;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.99644029;filter:url(#filter2793)"
+       id="rect2558"
+       width="112"
+       height="112"
+       x="9.0101547"
+       y="9.242384"
+       ry="25.757616" />
+    <text
+       xml:space="preserve"
+       id="text2573"
+       style="font-style:normal;font-weight:normal;font-size:53.3333px;line-height:0.75;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2575);fill:#ffffff;fill-opacity:1;stroke:none;"
+       transform="translate(11.908482,15.036412)"><tspan
+         x="15"
+         y="49.560649"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:53.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Ultra-Bold';fill:#ffffff;fill-opacity:1">DR
+</tspan></tspan><tspan
+         x="15"
+         y="90.267127"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:53.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Ultra-Bold';fill:#ffffff;fill-opacity:1">OP</tspan></tspan></text>
+  </g>
+</svg>
