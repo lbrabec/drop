@@ -51,7 +51,7 @@ class DropApp():
 
 
 if __name__ == "__main__":
-    if os.environ.get('DEV', False):
+    if os.getenv('DEV') == 'true':
         run_server(debug=True)
     else:
         t = threading.Thread(target=run_server, daemon=True)
