@@ -21,13 +21,19 @@ def upload_file():
             flash('No file part')
             return redirect(request.url)
         files = request.files.getlist('file')
+        padding = len(str(len(files)))
+        cnt = 0
         for file in files:
             if file and allowed_file(file.filename):
                 dropdir = os.path.expanduser(get_config().UPLOAD_FOLDER)
-                print('saving file %s to %s', (file.filename, dropdir))
                 pathlib.Path(dropdir).mkdir(parents=True, exist_ok=True) # FIXME do it better
-                filename = secure_filename(file.filename)
+                # ios does transparent conversion from heic to jpeg with random filename,
+                # prefix the filenime with counter to keep files in the order they were uploaded
+                filename = '{cnt:{fill}{width}}_'.format(cnt=cnt, fill='0', width=padding) + secure_filename(file.filename)
+                # FIXME uploading files with the same filename (new subdir for each upload? timestamp?)
+                print('saving file %s to %s', (filename, dropdir))
                 file.save(os.path.join(dropdir, filename))
+                cnt += 1
 
         flash('File(s) successfully uploaded')
         return redirect(url_for('upload_file'))
