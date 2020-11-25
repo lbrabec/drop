@@ -31,7 +31,7 @@ def upload_file():
                 # prefix the filenime with counter to keep files in the order they were uploaded
                 filename = '{cnt:{fill}{width}}_'.format(cnt=cnt, fill='0', width=padding) + secure_filename(file.filename)
                 # FIXME uploading files with the same filename (new subdir for each upload? timestamp?)
-                print('saving file %s to %s', (filename, dropdir))
+                print('saving file %s to %s' % (filename, dropdir))
                 file.save(os.path.join(dropdir, filename))
                 cnt += 1
 
