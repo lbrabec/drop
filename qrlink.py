@@ -1,22 +1,21 @@
 import qrcode
 import socket
+import json
+import subprocess
 from config import get_config
 
 
-def get_ip():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    try:
-        # doesn't even have to be reachable
-        s.connect(('10.255.255.255', 1))
-        IP = s.getsockname()[0]
-    except Exception:
-        IP = '127.0.0.1'
-    finally:
-        s.close()
-    return IP
+def get_interfaces():
+    out = []
+    ifs = json.loads(subprocess.check_output(["ip", "-4", "-j", "addr", "show"]))
+    for i in ifs:
+        if i['ifname'] == 'lo':
+            continue
+        out.append((i['ifname'], i['addr_info'][0]['local']))
+    return out
 
 
-def get_qr_code(ip=get_ip(), port=get_config().PORT):
+def get_qr_code(ip, port=get_config().PORT):
     qr = qrcode.QRCode()
     qr.add_data('http://%s:%s' % (ip, port))
     return qr.make_image()

@@ -2,16 +2,19 @@ import os
 import pathlib
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
+import notify2
 
 from config import get_config
 
+notify2.init("Drop")
 app = Flask(__name__)
 app.secret_key = "such secret, very wow!"
 
 
 def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in get_config().ALLOWED_EXTENSIONS
+    return True
+    #return '.' in filename and \
+    #       filename.rsplit('.', 1)[1].lower() in get_config().ALLOWED_EXTENSIONS
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -34,6 +37,14 @@ def upload_file():
                 print('saving file %s to %s' % (filename, dropdir))
                 file.save(os.path.join(dropdir, filename))
                 cnt += 1
+
+        if cnt >= 0:
+            n = notify2.Notification("Drop",
+                                     "%d new file%s in %s" % (cnt,
+                                                              "s" if cnt > 1 else "",
+                                                              get_config().UPLOAD_FOLDER),
+                                     "document-save-as-symbolic.symbolic")
+            n.show()
 
         flash('File(s) successfully uploaded')
         return redirect(url_for('upload_file'))

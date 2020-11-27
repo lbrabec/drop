@@ -1,3 +1,4 @@
 Flask
 Pillow >= 8.0.1
 qrcode
+notify2

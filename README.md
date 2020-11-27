@@ -5,7 +5,7 @@ Drop runs flask server and generates QR code with server URL for easy scan on ph
 
 Install dependencies (Fedora):
 ```
-dnf install python3-tkinter python3-pillow-tk python3-flask python3-qrcode
+dnf install python3-tkinter python3-pillow-tk python3-flask python3-qrcode python3-notify2
 ```
 
 Run
