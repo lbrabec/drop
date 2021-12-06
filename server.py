@@ -3,13 +3,17 @@ import pathlib
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 import notify2
+import dbus
 
 from config import get_config
 
-notify2.init("Drop")
+notify2.init("Drop", mainloop='glib')
 app = Flask(__name__)
 app.secret_key = "such secret, very wow!"
+n = None
 
+def handle_notifictaion_click(notification, key, user_data=None):
+    os.system('xdg-open ' + get_config().UPLOAD_FOLDER)
 
 def allowed_file(filename):
     return True
@@ -19,12 +23,13 @@ def allowed_file(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
+    global n
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file part')
             return redirect(request.url)
         files = request.files.getlist('file')
-        padding = len(str(len(files)))
+        padding = len(files)
         cnt = 0
         for file in files:
             if file and allowed_file(file.filename):
@@ -44,6 +49,7 @@ def upload_file():
                                                               "s" if cnt > 1 else "",
                                                               get_config().UPLOAD_FOLDER),
                                      "document-save-as-symbolic.symbolic")
+            n.add_action('open_drop_dir', 'Open drop dir', handle_notifictaion_click)
             n.show()
 
         flash('File(s) successfully uploaded')

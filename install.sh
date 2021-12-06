@@ -3,7 +3,7 @@
 DROPDIR=$(realpath `dirname $0`)
 DESKTOPPATH="$HOME/.local/share/applications/Drop.desktop"
 EXECPATH="$DROPDIR/drop.py"
-ICONPATH="$DROPDIR/static/drop.svg"
+ICONPATH="$DROPDIR/static/cz.lukasbrabec.Drop.svg"
 
 cat <<EOF > $DESKTOPPATH
 #!/usr/bin/env xdg-open
