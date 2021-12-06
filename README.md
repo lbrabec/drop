@@ -2,11 +2,10 @@
 
 ![Drop](./static/cz.lukasbrabec.Drop.svg)
 
-Simple app for dropping files from phone to computer, both devices have to be on the same network.
-Drop runs flask server and generates QR code with server URL for easy scan on phone.
+Simple app for dropping files from phone to computer. Drop will show you a QR code which links to flask server that is running in the background. Just scan the code with your phone, open the web page and upload the files to your computer.
 
 
-Install dependencies (Fedora):
+Fedora dependencies:
 ```
 dnf install python3-tkinter python3-pillow-tk python3-flask python3-qrcode python3-notify2
 ```
@@ -16,7 +15,7 @@ Run
 ./drop.py
 ```
 
-Install to run from applications menu:
+To run Drop from applications menu, install it:
 ```
 ./install.sh
 ```
